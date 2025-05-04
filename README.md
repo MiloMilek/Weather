@@ -15,3 +15,6 @@ API's used
 
 Marine Weather API requires no API key. 
 For obvious reasons, this repository does not contain my Openweathermap API key. You can obtain yours by signing up at https://openweathermap.org/, and placing it in the api_key variable in geocode.js, getLocationCity.js, weather.js (Yes normally I should've attempted to fetch the API key from an .env file, however since this is a small personal project, it isn't (and won't be) my priority.)
+
+For people looking at the spaghetti code, I'm just learning JS.
+test6385 on discord
