@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.gudea-regular {
+    font-family: "Gudea", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.gudea-bold {
+    font-family: "Gudea", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+.gudea-regular-italic {
+    font-family: "Gudea", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+  
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #c3c3c3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+aside{
+    position: absolute;
+    right: 88%;
+}
+main, section{
+    background: linear-gradient(to right bottom, aquamarine 40%, rgb(11, 105, 228));
+    width: 30vw;
+    height: 90vh;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    overflow-y: auto;
+}
+section{
+    display: none;
+    flex-direction: column;
+    color: white;
+}
+.sea > h1{
+    font-size: 4rem;
+    text-align: center;
+}
+.sea > p{
+    font-size: 2.5rem;
+    text-align: center;
+}
+.sea > div{
+    width: 50%;
+    height: 30%;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+.wave{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrap{
+    display: flex;
+    width: 100% !important;
+    height: 30%;
+}
+.wrap > div{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrap > div > img{
+    width: 30%;
+    height: 30%;
+    margin-bottom: 15px;
+}
+.sea > div > img{
+    width: 50%;
+    height: 50%;
+}
+.input{
+    margin: 40px auto;
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+}
+input{
+    border-radius: 100px;
+    outline: none;
+    border: none;
+    width: 70%;
+    height: 100%;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.6rem;
+    margin-right: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+button{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    cursor:pointer;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition: transform 0.5s ease-in-out;
+}
+svg{
+    stroke: grey;
+}
+button:hover{
+    transform: scale(1.2);
+}
+aside > button{
+    background-color: rgb(107, 105, 105);
+    color: white;
+    width: 10rem;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    font-size: 1.1rem;
+}
+aside > button:hover{
+    background-color: black;
+}
+.weatherIcon{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+}
+.weatherIcon img{
+    width: 45%;
+    height: 100%;
+    border: 1px solid rgba(49, 31, 31, 0.3);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.city{
+    color: white;
+    width: 100%;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 100;
+}
+.city > .temp{
+    font-size: 4.5rem;
+    font-weight: 500;
+}
+.city-name{
+    width: 100%;
+    height: 4rem;
+}
+.other{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    color: white;
+    font-size: 1.7rem;
+    margin-top: 50px;
+}
+.other > div{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.other div img{
+    width: 50%;
+    height: 60%;
+    margin-bottom: 15px;
+}

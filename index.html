@@ -1,0 +1,216 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWS (Some Weather Stuff)</title>
+    <link rel="shortcut icon" href="img/sun_cloud.png" type="image/x-icon">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" id="mode" href="style/darkmode.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script type='module' src="js/location.js" defer></script>
+    <script type="module" src="js/weather.js" defer></script>
+    <script type="module" src="js/geocode.js" defer></script>
+    <script type="module" src="js/getLocationCity.js" defer></script>
+    <script type="module" src="js/mode.js" defer></script>
+    <script type="module" src="js/sea.js" defer></script>
+    <script type="module">
+        import { getWeather } from "./js/weather.js";
+        import { getSea } from "./js/sea.js";
+        window.onload = () => {
+            getWeather();
+            getSea();
+        }
+    </script>
+    <aside>
+        <button onclick="mode()" id="modeBtn">Toggle darkmode</button>
+    </aside>
+    <main>
+        <div class="input">
+            <input type="text" name="city" id="city" placeholder="Enter city name">  
+            <button id="button"><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        </div> 
+        <div class="weatherIcon">
+            <img id="icon" alt="Weather icon" src="img/sun_cloud.png">
+        </div>
+        <div class="city">
+            <p class="temp gudea-bold" id="temp">0&deg;C</p>
+            <p class="gudea-regular" id="city-name">City</p>
+        </div>
+        <div class="other gudea-regular">
+            <div class="humidity">
+                <img src="img/humidity.png" alt="Humidity">
+                <p id="humidity">0%</p>
+                <p>Humidity</p>
+            </div>
+            <div class="wind-speed">
+                <img src="img/wind.png" alt="Wind">
+                <p id="wind-speed">0 km/h</p>
+                <p>Wind speed</p>
+            </div>
+        </div>
+    </main>
+    <section class="sea">
+        <h1 class="gudea-bold">Sea information</h1>
+        <p class="gudea-regular" id="city-name-sea">City</p>
+        <div class="wrap">
+            <div class="sea-temp">
+                <img src="img/temp.png" alt="Temperature">
+                <p id="sea-temp">0&deg;C</p>
+                <p>Current sea temperature</p>
+            </div>
+            <div class="sea-avg">
+                <img src="img/avg.png" alt="Average temperature">
+                <p id="sea-avg">0&deg;C</p>
+                <p>Sea temperature average</p>
+            </div>
+        </div>
+        <div class="wave">
+            <img src="img/wave.png" alt="Wave height">
+            <p id="wave">0m</p>
+            <p>Wave height</p>
+        </div>
+    </section>
+    <script type="module">
+        import { geocode } from "./js/geocode.js";
+        import { getWeather } from "./js/weather.js";
+        import { getSea } from "./js/sea.js";
+        const btn = document.getElementById("button");
+        const input = document.getElementById("city");
+
+        const search = async () =>{
+            const city = document.getElementById("city").value;
+
+            const response = await geocode(city);
+
+            console.log(response);
+
+            if(response && response.length > 0){
+                console.log(response[0]["lat"] + ", " + response[0]["lon"]);
+
+                getWeather(response[0]['lat'], response[0]['lon']);
+                getSea(response[0]['lat'], response[0]['lon']);
+            }
+        }
+        btn.addEventListener("click", search);
+        input.addEventListener("keydown", (e)=>{
+            if(e.key == "Enter"){
+                search();
+            }
+        })
+    </script>
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWS (Some Weather Stuff)</title>
+    <link rel="shortcut icon" href="img/sun_cloud.png" type="image/x-icon">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" id="mode" href="style/darkmode.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script type='module' src="js/location.js" defer></script>
+    <script type="module" src="js/weather.js" defer></script>
+    <script type="module" src="js/geocode.js" defer></script>
+    <script type="module" src="js/getLocationCity.js" defer></script>
+    <script type="module" src="js/mode.js" defer></script>
+    <script type="module" src="js/sea.js" defer></script>
+    <script type="module">
+        import { getWeather } from "./js/weather.js";
+        import { getSea } from "./js/sea.js";
+        window.onload = () => {
+            getWeather();
+            getSea();
+        }
+    </script>
+    <aside>
+        <button onclick="mode()" id="modeBtn">Toggle darkmode</button>
+    </aside>
+    <main>
+        <div class="input">
+            <input type="text" name="city" id="city" placeholder="Enter city name">  
+            <button id="button"><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        </div> 
+        <div class="weatherIcon">
+            <img id="icon" alt="Weather icon" src="img/sun_cloud.png">
+        </div>
+        <div class="city">
+            <p class="temp gudea-bold" id="temp">0&deg;C</p>
+            <p class="gudea-regular" id="city-name">City</p>
+        </div>
+        <div class="other gudea-regular">
+            <div class="humidity">
+                <img src="img/humidity.png" alt="Humidity">
+                <p id="humidity">0%</p>
+                <p>Humidity</p>
+            </div>
+            <div class="wind-speed">
+                <img src="img/wind.png" alt="Wind">
+                <p id="wind-speed">0 km/h</p>
+                <p>Wind speed</p>
+            </div>
+        </div>
+    </main>
+    <section class="sea">
+        <h1 class="gudea-bold">Sea information</h1>
+        <p class="gudea-regular" id="city-name-sea">City</p>
+        <div class="wrap">
+            <div class="sea-temp">
+                <img src="img/temp.png" alt="Temperature">
+                <p id="sea-temp">0&deg;C</p>
+                <p>Current sea temperature</p>
+            </div>
+            <div class="sea-avg">
+                <img src="img/avg.png" alt="Average temperature">
+                <p id="sea-avg">0&deg;C</p>
+                <p>Sea temperature average</p>
+            </div>
+        </div>
+        <div class="wave">
+            <img src="img/wave.png" alt="Wave height">
+            <p id="wave">0m</p>
+            <p>Wave height</p>
+        </div>
+    </section>
+    <script type="module">
+        import { geocode } from "./js/geocode.js";
+        import { getWeather } from "./js/weather.js";
+        import { getSea } from "./js/sea.js";
+        const btn = document.getElementById("button");
+        const input = document.getElementById("city");
+
+        const search = async () =>{
+            const city = document.getElementById("city").value;
+
+            const response = await geocode(city);
+
+            console.log(response);
+
+            if(response && response.length > 0){
+                console.log(response[0]["lat"] + ", " + response[0]["lon"]);
+
+                getWeather(response[0]['lat'], response[0]['lon']);
+                getSea(response[0]['lat'], response[0]['lon']);
+            }
+        }
+        btn.addEventListener("click", search);
+        input.addEventListener("keydown", (e)=>{
+            if(e.key == "Enter"){
+                search();
+            }
+        })
+    </script>
+</body>
+>>>>>>> 5c0356b (Merging local folder with remote)
+</html>

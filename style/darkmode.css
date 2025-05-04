@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(15, 15, 15);
+}
+main, section{
+    background: linear-gradient(to right bottom, rgb(20, 5, 236), rgb(106, 3, 241),  rgb(197, 4, 245));
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+    color: white;
+}
+input{
+    background-color: black;
+    color: rgb(211, 209, 209);
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+}
+button{
+    background-color: black;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px, rgba(255, 255, 255, 0.3) 0px 3px 7px -3px;
+}
+svg{
+    stroke: rgb(211, 209, 209);
+}
+.weatherIcon img{
+    border: 1px solid rgba(228, 222, 222, 0.3);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+aside > button{
+    background-color: rgb(177, 176, 176);
+    color: black;
+    width: 10rem;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    font-size: 1.1rem;
+}
+aside > button:hover{
+    background-color: rgb(255, 255, 255);
+}
