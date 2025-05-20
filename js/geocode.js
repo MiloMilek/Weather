@@ -1,4 +1,4 @@
-let api_query = "http://api.openweathermap.org/geo/1.0/direct";
+rolet api_query = "http://api.openweathermap.org/geo/1.0/direct";
 const api_key = "";
 
 const cityName = document.getElementById("city-name");
@@ -19,6 +19,6 @@ export async function geocode(city = null){
         }
     }   
     catch(error){
-        console.log("haha fuck you");
+        console.log("Error: " + error);
     }
 }
