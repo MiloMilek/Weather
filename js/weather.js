@@ -59,7 +59,7 @@ export async function getWeather(lat = null, long = null){
             })
             icon.src=`http://openweathermap.org/img/wn/${data['weather'][0]['icon']}@4x.png`;
         } else {
-            console.log("fuck you " + response.statusText);
+            console.log("Error " + response.statusText);
         }
     }
     catch(error){
